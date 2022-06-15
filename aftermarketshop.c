@@ -39,8 +39,6 @@ int main(void)
 
     printf("SHOPPING CART: \n");
 
-    printf("\n");
-
     CheckOutTotal();
 
     return 0;
@@ -49,14 +47,10 @@ int main(void)
 int CheckOutTotal(void)
 {
 
-    double total = 0.00;
-
     bool CheckOut = true;
-
     while (CheckOut == true)
 
     {
-
         printf(" \nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below: \n");
 
         int ShoppingCart;
@@ -64,54 +58,60 @@ int CheckOutTotal(void)
 
         if (ShoppingCart == 0)
         {
-            printf("Spoon 3DGT Wing (Carbon)    -   Civic FK8   -   $4,110.00\n");
-            double price = 41110.00;
-            double total = total + price;
+            int quantity;
+
+            printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - Civic FK8\n");
+
+            scanf("%d", &quantity);
+
+            printf("\n%d Spoon 3DGT Wing (Carbon) - Civic FK8 - Added to Cart !\n", quantity);
+
+            if (quantity >= 1 || quantity <= 6)
+            {
+                double zero;
+                zero = quantity * 4110.00 + zero;
+                printf("%.2lf", zero);
+            }
         }
 
         if (ShoppingCart == 1)
         {
-            printf("Spoon Aero Bumper Front, FRP   -     Civic FK8   -   $3,200.00\n");
+            printf("Spoon Aero Bumper Front, FRP    -   Civic FK8   -  Added to Cart !\n");
         }
 
         if (ShoppingCart == 2)
         {
-            printf("Spoon Aero Bumper Rear, FRP    -     Civic FK8   -   $3,025.00\n");
+            printf("Spoon Aero Bumper Rear, FRP    -     Civic FK8   -   Added to Cart !\n");
         }
 
         if (ShoppingCart == 3)
         {
-            printf("Spoon 3DGT Wing (Carbon)       -    S2000 AP1/2  -   $3,285.00");
+            printf("Spoon 3DGT Wing (Carbon)       -    S2000 AP1/2  -   Added to Cart !\n");
         }
 
         if (ShoppingCart == 4)
         {
-            printf("Spoon Aero Bumper [Front]      -    S2000 AP1/2  -   $2,290.00");
+            printf("Spoon Aero Bumper [Front]      -    S2000 AP1/2  -   Added to Cart !\n");
         }
 
         if (ShoppingCart == 5)
         {
-            printf("Spoon Aero Bumper [Rear]       -    S2000 AP1/2  -   $1,945.00");
+            printf("Spoon Aero Bumper [Rear]       -    S2000 AP1/2  -   Added to Cart !\n");
         }
 
-        else if (ShoppingCart == 6)
+        if (ShoppingCart == 6)
         {
             CheckOut = false;
             exit(0);
         }
 
-        else if (ShoppingCart > 14)
+        if (ShoppingCart > 7)
         {
             printf("Please Type in a Valid Product I.D. # or Use 6 To Quit.");
         }
-
-        else if (ShoppingCart == 12)
-        {
-            printf("%f\n", total);
-        }
     }
 
-    return total;
+    // return total;
 
     // ** LUHNS ALGORITHM **
 
