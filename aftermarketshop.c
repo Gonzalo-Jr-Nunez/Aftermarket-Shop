@@ -88,7 +88,7 @@ int CheckOutTotal(void)
 
             printf("\n%d Spoon Aero Bumper Front, FRP - Civic FK8 - Added to Cart !\n", quantity_one);
 
-            if (quantity_one >= 1)
+            if (quantity_one > 0)
             {
                 long double zero_one;
                 zero_one = quantity_one * 4110.00 + zero_one;
@@ -148,12 +148,47 @@ int CheckOutTotal(void)
 
         if (ShoppingCart == 4)
         {
-            printf("Spoon Aero Bumper [Front]      -    S2000 AP1/2  -   Added to Cart !\n");
+
+            int quantity_four;
+
+            printf("\nSelect Quantity of Spoon Aero Bumper [Front] - S2000 AP1/2\n");
+
+            scanf("%d", &quantity_four);
+
+            printf("\n%d Spoon Aero Bumper [Front] - S2000 AP1/2 - Added to Cart !\n", quantity_four);
+
+            if (quantity_four >= 1)
+            {
+                long double zero_four;
+                zero_four = quantity_four * 4110.00 + zero_four;
+                printf("%.2Lf\n", zero_four);
+            }
+            else if (quantity_four < 0)
+            {
+                printf("Sorry, please enter a valid number of units you'd like\n");
+            }
         }
 
         if (ShoppingCart == 5)
         {
-            printf("Spoon Aero Bumper [Rear]       -    S2000 AP1/2  -   Added to Cart !\n");
+            int quantity_five;
+
+            printf("\nSelect Quantity of Spoon Aero Bumper [Rear] - S2000 AP1/2\n");
+
+            scanf("%d", &quantity_five);
+
+            printf("\n%d Spoon Aero Bumper [Rear] - S2000 AP1/2 - Added to Cart !\n", quantity_five);
+
+            if (quantity_five >= 1)
+            {
+                long double zero_five;
+                zero_five = quantity_five * 4110.00 + zero_five;
+                printf("%.2Lf\n", zero_five);
+            }
+            else if (quantity_five < 0)
+            {
+                printf("Sorry, please enter a valid number of units you'd like\n");
+            }
         }
 
         if (ShoppingCart == 6)
