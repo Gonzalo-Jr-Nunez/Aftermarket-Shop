@@ -68,9 +68,9 @@ int CheckOutTotal(void)
 
             if (quantity >= 1 || quantity <= 6)
             {
-                double zero;
+                long double zero;
                 zero = quantity * 4110.00 + zero;
-                printf("%.2lf", zero);
+                printf("%.2Lf", zero);
             }
         }
 
