@@ -8,7 +8,6 @@ int CheckOutTotal(void);
 int main(void)
 
 {
-
     // Some spaces between for readability purposes
     printf("\n");
 
@@ -74,23 +73,77 @@ int CheckOutTotal(void)
             }
             else if (quantity < 0)
             {
-                printf("Sorry, please enter a valid number of the product you'd like\n");
+                printf("Sorry, please enter a valid number of units you'd like\n");
             }
         }
 
         if (ShoppingCart == 1)
         {
-            printf("Spoon Aero Bumper Front, FRP    -   Civic FK8   -  Added to Cart !\n");
+
+            int quantity_one;
+
+            printf("\nSelect Quantity of Spoon Aero Bumper Front, FRP - Civic FK8\n");
+
+            scanf("%d", &quantity_one);
+
+            printf("\n%d Spoon Aero Bumper Front, FRP - Civic FK8 - Added to Cart !\n", quantity_one);
+
+            if (quantity_one >= 1)
+            {
+                long double zero_one;
+                zero_one = quantity_one * 4110.00 + zero_one;
+                printf("%.2Lf\n", zero_one);
+            }
+            else if (quantity_one < 0)
+            {
+                printf("Sorry, please enter a valid number of units you'd like\n");
+            }
         }
 
         if (ShoppingCart == 2)
         {
-            printf("Spoon Aero Bumper Rear, FRP    -     Civic FK8   -   Added to Cart !\n");
+
+            int quantity_two;
+
+            printf("\nSelect Quantity of Spoon Aero Bumper Rear, FRP - Civic FK8\n");
+
+            scanf("%d", &quantity_two);
+
+            printf("\n%d Spoon Aero Bumper Rear, FRP - Civic FK8 - Added to Cart !\n", quantity_two);
+
+            if (quantity_two >= 1)
+            {
+                long double zero_two;
+                zero_two = quantity_two * 4110.00 + zero_two;
+                printf("%.2Lf\n", zero_two);
+            }
+            else if (quantity_two < 0)
+            {
+                printf("Sorry, please enter a valid number of units you'd like\n");
+            }
         }
 
         if (ShoppingCart == 3)
         {
-            printf("Spoon 3DGT Wing (Carbon)       -    S2000 AP1/2  -   Added to Cart !\n");
+
+            int quantity_three;
+
+            printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - S2000 AP1/2\n");
+
+            scanf("%d", &quantity_three);
+
+            printf("\n%d Spoon 3DGT Wing (Carbon) - S2000 AP1/2 - Added to Cart !\n", quantity_three);
+
+            if (quantity_three >= 1)
+            {
+                long double zero_three;
+                zero_three = quantity_three * 4110.00 + zero_three;
+                printf("%.2Lf\n", zero_three);
+            }
+            else if (quantity_three < 0)
+            {
+                printf("Sorry, please enter a valid number of units you'd like\n");
+            }
         }
 
         if (ShoppingCart == 4)
