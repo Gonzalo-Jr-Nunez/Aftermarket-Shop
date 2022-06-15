@@ -6,6 +6,7 @@
 int CheckOutTotal(void);
 
 int main(void)
+
 {
 
     // Some spaces between for readability purposes
@@ -51,8 +52,7 @@ int CheckOutTotal(void)
     while (CheckOut == true)
 
     {
-        printf(" \nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below: \n");
-
+        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below: \n");
         int ShoppingCart;
         scanf("%d", &ShoppingCart);
 
@@ -66,11 +66,15 @@ int CheckOutTotal(void)
 
             printf("\n%d Spoon 3DGT Wing (Carbon) - Civic FK8 - Added to Cart !\n", quantity);
 
-            if (quantity >= 1 || quantity <= 6)
+            if (quantity >= 1)
             {
                 long double zero;
                 zero = quantity * 4110.00 + zero;
-                printf("%.2Lf", zero);
+                printf("%.2Lf\n", zero);
+            }
+            else if (quantity < 0)
+            {
+                printf("Sorry, please enter a valid number of the product you'd like\n");
             }
         }
 
@@ -103,11 +107,6 @@ int CheckOutTotal(void)
         {
             CheckOut = false;
             exit(0);
-        }
-
-        if (ShoppingCart > 7)
-        {
-            printf("Please Type in a Valid Product I.D. # or Use 6 To Quit.");
         }
     }
 
