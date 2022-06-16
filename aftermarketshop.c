@@ -19,6 +19,13 @@ int quantity_three;
 int quantity_four;
 int quantity_five;
 
+int unit;
+int unit_one;
+int unit_two;
+int unit_three;
+int unit_four;
+int unit_five;
+
 int main(void)
 
 {
@@ -66,7 +73,7 @@ long double CheckOutTotal(void)
 
     {
 
-        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 7 to End Session): \n");
+        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 7 to End Session): \n\a");
         int ShoppingCart;
         scanf("%d", &ShoppingCart);
 
@@ -83,6 +90,7 @@ long double CheckOutTotal(void)
             {
                 zero = quantity * 4110.00 + zero;
                 printf("%.2Lf\n", zero);
+                unit = unit + quantity;
             }
             else if (quantity < 0)
             {
@@ -93,7 +101,7 @@ long double CheckOutTotal(void)
         if (ShoppingCart == 1)
         {
 
-            printf("\nSelect Quantity of Spoon Aero Bumper Front, FRP - Civic FK8\n");
+            printf("\nSelect Quantity of Sp0oon Aero Bumper Front, FRP - Civic FK8\n");
 
             scanf("%d", &quantity_one);
 
@@ -101,8 +109,9 @@ long double CheckOutTotal(void)
 
             if (quantity_one > 0)
             {
-                zero_one = quantity_one * 4110.00 + zero_one;
+                zero_one = quantity_one * 3200.00 + zero_one;
                 printf("%.2Lf\n", zero_one);
+                unit_one = unit_one + quantity_one;
             }
             else if (quantity_one < 0)
             {
@@ -121,8 +130,9 @@ long double CheckOutTotal(void)
 
             if (quantity_two >= 1)
             {
-                zero_two = quantity_two * 4110.00 + zero_two;
+                zero_two = quantity_two * 3025.00 + zero_two;
                 printf("%.2Lf\n", zero_two);
+                unit_two = unit_two + quantity_two;
             }
             else if (quantity_two < 0)
             {
@@ -141,8 +151,9 @@ long double CheckOutTotal(void)
 
             if (quantity_three >= 1)
             {
-                zero_three = quantity_three * 4110.00 + zero_three;
+                zero_three = quantity_three * 3285.00 + zero_three;
                 printf("%.2Lf\n", zero_three);
+                unit_three = unit_three + quantity_three;
             }
             else if (quantity_three < 0)
             {
@@ -161,8 +172,9 @@ long double CheckOutTotal(void)
 
             if (quantity_four >= 1)
             {
-                zero_four = quantity_four * 4110.00 + zero_four;
+                zero_four = quantity_four * 2290.00 + zero_four;
                 printf("%.2Lf\n", zero_four);
+                unit_four = unit_four + quantity_four;
             }
             else if (quantity_four < 0)
             {
@@ -181,8 +193,9 @@ long double CheckOutTotal(void)
 
             if (quantity_five >= 1)
             {
-                zero_five = quantity_five * 4110.00 + zero_five;
+                zero_five = quantity_five * 1945.00 + zero_five;
                 printf("%.2Lf\n", zero_five);
+                unit_five = unit_five + quantity_five;
             }
             else if (quantity_five < 0)
             {
@@ -192,14 +205,17 @@ long double CheckOutTotal(void)
 
         if (ShoppingCart == 6)
         {
-            printf("Shopping Cart: \n");
+            printf("\nShopping Cart: \n");
 
-            printf("\n%d Spoon 3DGT Wing (Carbon) - Civic FK8\n", quantity);
-            printf("\n%d Spoon Aero Bumper Front, FRP - Civic FK8\n", quantity_one);
-            printf("\n%d Spoon Aero Bumper Rear, FRP - Civic FK8\n", quantity_two);
-            printf("\n%d Spoon 3DGT Wing (Carbon) - S2000 AP1/2\n", quantity_three);
-            printf("\n%d Spoon Aero Bumper [Front] - S2000 AP1/2\n", quantity_four);
-            printf("\n%d Spoon Aero Bumper [Rear] - S2000 AP1/2\n", quantity_five);
+            printf("\n%d Spoon 3DGT Wing (Carbon)       -   Civic FK8       $%.2Lf      ($4110.00 Per Unit)\n", unit, zero);
+            printf("\n%d Spoon Aero Bumper Front, FRP   -   Civic FK8       $%.2Lf      ($3200.00 Per Unit)\n", unit_one, zero_one);
+            printf("\n%d Spoon Aero Bumper Rear, FRP    -   Civic FK8       $%.2Lf      ($3025.00 Per Unit)\n", unit_two, zero_two);
+            printf("\n%d Spoon 3DGT Wing (Carbon)       -   S2000 AP1/2     $%.2Lf      ($3285.00 Per Unit)\n", unit_three, zero_three);
+            printf("\n%d Spoon Aero Bumper [Front]      -   S2000 AP1/2     $%.2Lf      ($2290.00 Per Unit)\n", unit_four, zero_four);
+            printf("\n%d Spoon Aero Bumper [Rear]       -   S2000 AP1/2     $%.2Lf      ($1945.00 Per Unit)\n", unit_five, zero_five);
+
+            long double sum = zero + zero_one + zero_two + zero_three + zero_four + zero_five;
+            printf("\nTotal: %.2Lf\n", sum);
         }
 
         if (ShoppingCart == 7)
