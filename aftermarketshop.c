@@ -3,7 +3,21 @@
 #include <string.h>
 #include <stdbool.h>
 
-int CheckOutTotal(void);
+long double CheckOutTotal(void);
+
+long double zero;
+long double zero_one;
+long double zero_two;
+long double zero_three;
+long double zero_four;
+long double zero_five;
+
+int quantity;
+int quantity_one;
+int quantity_two;
+int quantity_three;
+int quantity_four;
+int quantity_five;
 
 int main(void)
 
@@ -44,20 +58,20 @@ int main(void)
     return 0;
 }
 
-int CheckOutTotal(void)
+long double CheckOutTotal(void)
 {
 
     bool CheckOut = true;
     while (CheckOut == true)
 
     {
-        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below: \n");
+
+        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 7 to End Session): \n");
         int ShoppingCart;
         scanf("%d", &ShoppingCart);
 
         if (ShoppingCart == 0)
         {
-            int quantity;
 
             printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - Civic FK8\n");
 
@@ -67,7 +81,6 @@ int CheckOutTotal(void)
 
             if (quantity >= 1)
             {
-                long double zero;
                 zero = quantity * 4110.00 + zero;
                 printf("%.2Lf\n", zero);
             }
@@ -80,8 +93,6 @@ int CheckOutTotal(void)
         if (ShoppingCart == 1)
         {
 
-            int quantity_one;
-
             printf("\nSelect Quantity of Spoon Aero Bumper Front, FRP - Civic FK8\n");
 
             scanf("%d", &quantity_one);
@@ -90,7 +101,6 @@ int CheckOutTotal(void)
 
             if (quantity_one > 0)
             {
-                long double zero_one;
                 zero_one = quantity_one * 4110.00 + zero_one;
                 printf("%.2Lf\n", zero_one);
             }
@@ -103,8 +113,6 @@ int CheckOutTotal(void)
         if (ShoppingCart == 2)
         {
 
-            int quantity_two;
-
             printf("\nSelect Quantity of Spoon Aero Bumper Rear, FRP - Civic FK8\n");
 
             scanf("%d", &quantity_two);
@@ -113,7 +121,6 @@ int CheckOutTotal(void)
 
             if (quantity_two >= 1)
             {
-                long double zero_two;
                 zero_two = quantity_two * 4110.00 + zero_two;
                 printf("%.2Lf\n", zero_two);
             }
@@ -126,8 +133,6 @@ int CheckOutTotal(void)
         if (ShoppingCart == 3)
         {
 
-            int quantity_three;
-
             printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - S2000 AP1/2\n");
 
             scanf("%d", &quantity_three);
@@ -136,7 +141,6 @@ int CheckOutTotal(void)
 
             if (quantity_three >= 1)
             {
-                long double zero_three;
                 zero_three = quantity_three * 4110.00 + zero_three;
                 printf("%.2Lf\n", zero_three);
             }
@@ -149,8 +153,6 @@ int CheckOutTotal(void)
         if (ShoppingCart == 4)
         {
 
-            int quantity_four;
-
             printf("\nSelect Quantity of Spoon Aero Bumper [Front] - S2000 AP1/2\n");
 
             scanf("%d", &quantity_four);
@@ -159,7 +161,6 @@ int CheckOutTotal(void)
 
             if (quantity_four >= 1)
             {
-                long double zero_four;
                 zero_four = quantity_four * 4110.00 + zero_four;
                 printf("%.2Lf\n", zero_four);
             }
@@ -171,7 +172,6 @@ int CheckOutTotal(void)
 
         if (ShoppingCart == 5)
         {
-            int quantity_five;
 
             printf("\nSelect Quantity of Spoon Aero Bumper [Rear] - S2000 AP1/2\n");
 
@@ -181,7 +181,6 @@ int CheckOutTotal(void)
 
             if (quantity_five >= 1)
             {
-                long double zero_five;
                 zero_five = quantity_five * 4110.00 + zero_five;
                 printf("%.2Lf\n", zero_five);
             }
@@ -193,8 +192,27 @@ int CheckOutTotal(void)
 
         if (ShoppingCart == 6)
         {
+            printf("Shopping Cart: \n");
+
+            printf("\n%d Spoon 3DGT Wing (Carbon) - Civic FK8\n", quantity);
+            printf("\n%d Spoon Aero Bumper Front, FRP - Civic FK8\n", quantity_one);
+            printf("\n%d Spoon Aero Bumper Rear, FRP - Civic FK8\n", quantity_two);
+            printf("\n%d Spoon 3DGT Wing (Carbon) - S2000 AP1/2\n", quantity_three);
+            printf("\n%d Spoon Aero Bumper [Front] - S2000 AP1/2\n", quantity_four);
+            printf("\n%d Spoon Aero Bumper [Rear] - S2000 AP1/2\n", quantity_five);
+        }
+
+        if (ShoppingCart == 7)
+        {
+            long double sum = zero + zero_one + zero_two + zero_three + zero_four + zero_five;
+            printf("Your total is %.2Lf\n", sum);
+            printf("Would you like to proceed with the checkout process?: \n");
+        }
+
+        if (ShoppingCart == 8)
+        {
             CheckOut = false;
-            exit(0);
+            printf("Session Closed, thank you for considering Spoon Sports.\n");
         }
     }
 
