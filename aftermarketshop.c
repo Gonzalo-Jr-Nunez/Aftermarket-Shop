@@ -5,6 +5,8 @@
 
 long double CheckOutTotal(void);
 
+int CreditCardValid(int);
+
 long double zero;
 long double zero_one;
 long double zero_two;
@@ -78,6 +80,7 @@ long double CheckOutTotal(void)
         scanf("%d", &ShoppingCart);
 
         if (ShoppingCart == 0)
+
         {
 
             printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - Civic FK8\n");
@@ -203,28 +206,6 @@ long double CheckOutTotal(void)
             }
         }
 
-        if (ShoppingCart == 6)
-        {
-            printf("\nShopping Cart: \n");
-
-            printf("\n%d Spoon 3DGT Wing (Carbon)       -   Civic FK8       $%.2Lf      ($4110.00 Per Unit)\n", unit, zero);
-            printf("\n%d Spoon Aero Bumper Front, FRP   -   Civic FK8       $%.2Lf      ($3200.00 Per Unit)\n", unit_one, zero_one);
-            printf("\n%d Spoon Aero Bumper Rear, FRP    -   Civic FK8       $%.2Lf      ($3025.00 Per Unit)\n", unit_two, zero_two);
-            printf("\n%d Spoon 3DGT Wing (Carbon)       -   S2000 AP1/2     $%.2Lf      ($3285.00 Per Unit)\n", unit_three, zero_three);
-            printf("\n%d Spoon Aero Bumper [Front]      -   S2000 AP1/2     $%.2Lf      ($2290.00 Per Unit)\n", unit_four, zero_four);
-            printf("\n%d Spoon Aero Bumper [Rear]       -   S2000 AP1/2     $%.2Lf      ($1945.00 Per Unit)\n", unit_five, zero_five);
-
-            long double sum = zero + zero_one + zero_two + zero_three + zero_four + zero_five;
-            printf("\nTotal: %.2Lf\n", sum);
-        }
-
-        if (ShoppingCart == 7)
-        {
-            long double sum = zero + zero_one + zero_two + zero_three + zero_four + zero_five;
-            printf("Your total is %.2Lf\n", sum);
-            printf("Would you like to proceed with the checkout process?: \n");
-        }
-
         if (ShoppingCart == 8)
         {
             CheckOut = false;
@@ -232,10 +213,7 @@ long double CheckOutTotal(void)
         }
     }
 
-    // return total;
-
     // ** LUHNS ALGORITHM **
-
     // Multiply every other digit by 2, starting with the number’s second-to-last digit, and then add those products’ digits together.
     // Add the sum to the sum of the digits that weren’t multiplied by 2.
     // If the total’s last digit is 0 (or, put more formally, if the total modulo 10 is congruent to 0), the number is valid!
