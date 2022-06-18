@@ -74,15 +74,13 @@ long double CheckOutTotal(void)
     while (CheckOut == true)
 
     {
-
-        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 7 to End Session): \n\a");
+        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 7 to End Session): \n");
         int ShoppingCart;
         scanf("%d", &ShoppingCart);
 
         if (ShoppingCart == 0)
 
         {
-
             printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - Civic FK8\n");
 
             scanf("%d", &quantity);
@@ -103,7 +101,6 @@ long double CheckOutTotal(void)
 
         if (ShoppingCart == 1)
         {
-
             printf("\nSelect Quantity of Sp0oon Aero Bumper Front, FRP - Civic FK8\n");
 
             scanf("%d", &quantity_one);
@@ -124,7 +121,6 @@ long double CheckOutTotal(void)
 
         if (ShoppingCart == 2)
         {
-
             printf("\nSelect Quantity of Spoon Aero Bumper Rear, FRP - Civic FK8\n");
 
             scanf("%d", &quantity_two);
@@ -145,7 +141,6 @@ long double CheckOutTotal(void)
 
         if (ShoppingCart == 3)
         {
-
             printf("\nSelect Quantity of Spoon 3DGT Wing (Carbon) - S2000 AP1/2\n");
 
             scanf("%d", &quantity_three);
@@ -166,7 +161,6 @@ long double CheckOutTotal(void)
 
         if (ShoppingCart == 4)
         {
-
             printf("\nSelect Quantity of Spoon Aero Bumper [Front] - S2000 AP1/2\n");
 
             scanf("%d", &quantity_four);
@@ -187,7 +181,6 @@ long double CheckOutTotal(void)
 
         if (ShoppingCart == 5)
         {
-
             printf("\nSelect Quantity of Spoon Aero Bumper [Rear] - S2000 AP1/2\n");
 
             scanf("%d", &quantity_five);
@@ -203,6 +196,32 @@ long double CheckOutTotal(void)
             else if (quantity_five < 0)
             {
                 printf("Sorry, please enter a valid number of units you'd like\n");
+            }
+        }
+
+        if (ShoppingCart == 6)
+        {
+            printf("\nShopping Cart: \n");
+
+            printf("\n%d Spoon 3DGT Wing (Carbon)       -   Civic FK8       $%.2Lf      ($4110.00 Per Unit)\n", unit, zero);
+            printf("\n%d Spoon Aero Bumper Front, FRP   -   Civic FK8       $%.2Lf      ($3200.00 Per Unit)\n", unit_one, zero_one);
+            printf("\n%d Spoon Aero Bumper Rear, FRP    -   Civic FK8       $%.2Lf      ($3025.00 Per Unit)\n", unit_two, zero_two);
+            printf("\n%d Spoon 3DGT Wing (Carbon)       -   S2000 AP1/2     $%.2Lf      ($3285.00 Per Unit)\n", unit_three, zero_three);
+            printf("\n%d Spoon Aero Bumper [Front]      -   S2000 AP1/2     $%.2Lf      ($2290.00 Per Unit)\n", unit_four, zero_four);
+            printf("\n%d Spoon Aero Bumper [Rear]       -   S2000 AP1/2     $%.2Lf      ($1945.00 Per Unit)\n", unit_five, zero_five);
+
+            long double sum = zero + zero_one + zero_two + zero_three + zero_four + zero_five;
+            printf("\nTotal: %.2Lf\n", sum);
+
+            printf("\nWould you like to proceed with the checkout process? ( Y / N ): \n");
+
+            char response;
+            scanf("%c", &response);
+
+            if (response == 'y' || response == 'Y')
+            {
+                printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
+                break;
             }
         }
 
