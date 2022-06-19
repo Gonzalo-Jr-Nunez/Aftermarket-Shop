@@ -4,8 +4,8 @@
 #include <stdbool.h>
 
 long double CheckOutTotal(void);
-
-int CreditCardValid(int);
+char ShippingInformation(void);
+int CreditCard(void);
 
 long double zero;
 long double zero_one;
@@ -13,6 +13,7 @@ long double zero_two;
 long double zero_three;
 long double zero_four;
 long double zero_five;
+long double sum;
 
 int quantity;
 int quantity_one;
@@ -63,6 +64,8 @@ int main(void)
     printf("SHOPPING CART: \n");
 
     CheckOutTotal();
+    ShippingInformation();
+    CreditCard();
 
     return 0;
 }
@@ -74,7 +77,7 @@ long double CheckOutTotal(void)
     while (CheckOut == true)
 
     {
-        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 7 to End Session): \n");
+        printf("\nPlease Enter the Product(s) You'd Like To Purchase BY I.D. # in the Space Provided Below (Or 8 to End Session): \n");
         int ShoppingCart;
         scanf("%d", &ShoppingCart);
 
@@ -212,28 +215,42 @@ long double CheckOutTotal(void)
 
             long double sum = zero + zero_one + zero_two + zero_three + zero_four + zero_five;
             printf("\nTotal: %.2Lf\n", sum);
+        }
 
-            printf("\nWould you like to proceed with the checkout process? ( Y / N ): \n");
-
-            char response;
-            scanf("%c", &response);
-
-            if (response == 'y' || response == 'Y')
-            {
-                printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
-                break;
-            }
+        if (ShoppingCart == 7)
+        {
+            CheckOut = false;
         }
 
         if (ShoppingCart == 8)
         {
             CheckOut = false;
-            printf("Session Closed, thank you for considering Spoon Sports.\n");
+            printf("Session Closed, thank you for considering Spoon Sports!\n");
         }
     }
+}
 
-    // ** LUHNS ALGORITHM **
-    // Multiply every other digit by 2, starting with the number’s second-to-last digit, and then add those products’ digits together.
-    // Add the sum to the sum of the digits that weren’t multiplied by 2.
-    // If the total’s last digit is 0 (or, put more formally, if the total modulo 10 is congruent to 0), the number is valid!
+char ShippingInformation(void)
+{
+    printf("\nYour Shipping Information Has Been Directly Copied From Your Settings\n");
+    printf("\nEmail Address: Doug_Dimmsdale_Dimmadome @ gmail.com\n");
+    printf("\nShipping Address: 235 W Santa Clara St, Ventura, CA 93001\n");
+    printf("\nPhone Number: (805) 643 - 6074\n");
+
+    return 0;
+}
+
+int CreditCard(void)
+{
+    printf("\nPlease Enter Your Credit Card Information Below: \n");
+
+    int CreditCardNum;
+    scanf("%d\n", &CreditCardNum);
+
+    for (int i = 0, j = 10, k = 10; i < strlen(CreditCardNum); i++, j * 10, k * 10)
+    {
+
+        int digit = ((CreditCardNum / j) % k);
+        printf("%d\n", digit);
+    }
 }
